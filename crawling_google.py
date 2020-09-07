@@ -33,7 +33,7 @@ for target in targets:
     SCROLL_PAUSE_SEC = 1
     # 스크롤 높이 가져옴
     last_height = driver.execute_script("return document.body.scrollHeight")
-    for x in range(15):
+    for x in range(30):
         # 끝까지 스크롤 다운
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         # 1초 대기
@@ -55,11 +55,11 @@ for target in targets:
     try:
         # 이미지 저장하기
         # 사진이 담겨있는 태그데이터를 긁어오기
-        img_datas = datas.find('div', {'id': 'islrg'})
-        img_datas = img_datas.findall('img', {'class': 'rg_i Q4LuWd'})
-        # print(img_data)
-        for i, img_data in enumerate(img_data):
+        img_datas = datas.find_all('img', {'class': 'rg_i Q4LuWd'})
+        # print(img_datas)
+        for i, img_data in enumerate(img_datas):
             img_url = img_data.get('src')
+            # print(img_url)
             if img_url[:2] == '//':
                 img_url = 'https:' + img_url
             urllib.request.urlretrieve(img_url, img_path + '/' + str(target) + '_' + str(i) + '.jpg')  # 폴더에 사진 저장
