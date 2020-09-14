@@ -4,8 +4,7 @@ from keras.layers import Dense, Dropout, Activation, Flatten, GlobalAveragePooli
 from keras.optimizers import RMSprop, Adam, SGD
 from keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
 from keras.preprocessing.image import ImageDataGenerator
-import glob, os.path as osp
-import tensorflow as tf
+import glob
 
 # 전역변수
 img_rows, img_cols = 224, 224
