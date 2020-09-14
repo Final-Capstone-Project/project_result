@@ -3,12 +3,14 @@ from keras.preprocessing.image import img_to_array
 import cv2
 import numpy as np
 
+
 fire_cascade = cv2.CascadeClassifier('fire_detection.xml')
 classifier = load_model('fire_mobilNet.h5')
 
 class_labels = ['Fire', 'Neutral']
 
 cap = cv2.VideoCapture('./data/test1.mp4')
+# cap = cv2.VideoCapture(0)
 
 cnt = 0
 
@@ -42,6 +44,8 @@ while True:
 
     if label == 'Fire':
         cv2.putText(frame, label, label_position, cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 255, 0), 2)
+    else:
+        cv2.putText(frame, label, (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 255, 0), 2)
 
     cv2.imshow('frame', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
