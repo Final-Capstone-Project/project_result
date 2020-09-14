@@ -18,38 +18,45 @@ public class UserDAO_spring implements UserDAO {
 	JdbcTemplate template;
 
 	@Override
-	   public UserVO login(String id, String pw) {	      
-	      String sql = "";
-	      UserVO vo = null;
+	public UserVO login(String id, String pw) {	      
+		String sql = "select * from member where user_id=? and pw=?";
+		UserVO vo = null;
+		try {
+			vo = template.queryForObject(sql, new Object[] { id, pw }, new UserRowMapper());
+		} catch (Exception e) {
 
-	      return vo;
-	   }
+		}
+		return vo;
+	}
 
 	@Override
 	public int addUser(UserVO user) throws Exception {
-		
-		return 0;
+		String sql = "insert into member (user_id, pw, name) "
+				+ "values (?, ?, ?)";
+
+		return template.update(sql,user.getUser_id(), user.getPw(), user.getName());
 	}
 
 	@Override
 	public int updateUser(UserVO user) {
-		 
-		return 0;
+		String sql = "update member set name=?, pw=? "
+		 		+ " where  user_id  = ? ";
+		return template.update(sql, new Object[] {user.getName(), user.getPw(), user.getUser_id()});
 	}
 
 	@Override
 	public int removeUser(String userid) {
-		
-		return 0;
+		String sql = "delete from member where  user_id  = ? ";
+		return template.update(sql,new Object[] {userid});
 	}
 
 	class UserRowMapper implements RowMapper<UserVO>{
 		@Override
 		public UserVO mapRow(ResultSet rs, int rowNum) throws SQLException {
 			UserVO vo = new UserVO();
-			
-			// vo.set???(rs.get??(" "))
-			
+			vo.setUser_id(rs.getString("user_id"));
+			vo.setPw(rs.getString("pw"));
+			vo.setName(rs.getString("name"));
 			return vo;
 		}
 	}
