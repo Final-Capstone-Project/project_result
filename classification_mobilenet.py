@@ -18,7 +18,7 @@ batch_size = 32
 for layer in mobilenet.layers:
     layer.trainable = True
 
-
+# 끝 단
 def addTopModelMobileNet(bottom_model, num_classes):
     top_model = bottom_model.output
     top_model = GlobalAveragePooling2D()(top_model)
@@ -38,14 +38,17 @@ def addTopModelMobileNet(bottom_model, num_classes):
 FC_Head = addTopModelMobileNet(mobilenet, num_classes)
 model = Model(inputs=mobilenet.input, outputs=FC_Head)
 
+# 학습 데이터 생성기
 train_datagen = ImageDataGenerator(
     rescale=1. / 255,
     rotation_range=30,
     width_shift_range=0.3,
     height_shift_range=0.3,
-    zoom_range=[0.5, 0.5],
+    zoom_range=0.4,
     horizontal_flip=True,
     fill_mode='nearest')
+
+# 검증 데이터 생성기
 validation_datagen = ImageDataGenerator(rescale=1. / 255)
 
 train_path = glob.glob(train_data_dir + '/*')
@@ -71,18 +74,22 @@ checkpoint = ModelCheckpoint(
     mode='min',
     save_best_only=True,
     verbose=1)
+
+# Early-Stopping
 earlystop = EarlyStopping(
     monitor='val_loss',
     min_delta=0,
     patience=3,
     verbose=1, restore_best_weights=True)
 
+# callback
 learning_rate_reduction = ReduceLROnPlateau(monitor='val_accuracy',
                                             patience=5,
                                             verbose=1,
                                             factor=0.2,
                                             min_lr=0.0001)
 callbacks = [earlystop, checkpoint, learning_rate_reduction]
+
 # 모델 학습과정 설정
 model.compile(loss='categorical_crossentropy',
               optimizer=SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True),
@@ -91,7 +98,7 @@ model.compile(loss='categorical_crossentropy',
 # 모델 학습
 nb_train_samples = 1272
 nb_validation_samples = 50
-epochs = 7
+epochs = 8
 history = model.fit_generator(
     train_generator,
     steps_per_epoch=nb_train_samples // batch_size,
