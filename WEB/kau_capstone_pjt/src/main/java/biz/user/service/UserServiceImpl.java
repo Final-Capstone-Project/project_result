@@ -28,6 +28,11 @@ public class UserServiceImpl implements UserService{
 	public UserVO login(String id, String pw) {
 		return dao.login(id, pw);
 	}
+	
+	@Override
+	public UserVO getUser(String id) {
+		return dao.getUser(id);
+	}
 
 	@Override
 	public int addUser(UserVO user) throws Exception {
