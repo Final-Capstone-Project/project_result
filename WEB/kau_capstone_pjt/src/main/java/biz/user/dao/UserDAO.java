@@ -7,7 +7,7 @@ import biz.user.vo.UserVO;
 public interface UserDAO {
 	
 	UserVO login(String id, String pw);
-	UserVO getUser(String userid);
+	UserVO getUser(String id);
 	int addUser(UserVO user) throws Exception;
 	int updateUser(UserVO user);
 	int removeUser(String userid);
