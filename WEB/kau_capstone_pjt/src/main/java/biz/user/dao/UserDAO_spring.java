@@ -28,6 +28,14 @@ public class UserDAO_spring implements UserDAO {
 		}
 		return vo;
 	}
+	
+	@Override
+	public UserVO getUser(String userid) {
+		String sql = "select * from member where user_id = ?";
+		UserVO vo = null;
+		vo = template.queryForObject(sql, new Object[] {userid}, new UserRowMapper());
+		return vo;
+	}
 
 	@Override
 	public int addUser(UserVO user) throws Exception {
