@@ -42,6 +42,8 @@ while True:
 
     if label == 'Fire':
         cv2.putText(frame, label, label_position, cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 255, 0), 2)
+    else:
+        cv2.putText(frame, 'Neutral', label_position, cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 255, 0), 2)
 
     cv2.imshow('frame', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
