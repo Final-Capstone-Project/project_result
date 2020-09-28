@@ -9,7 +9,20 @@
 	</head>
 	<body> <!--점보트론은 부트스트랩에서 홈페이지를 소개하는 메인 전광판을 의미-->
 		<style type="text/css">
-			
+			.statusTitle {
+				text-align: center;
+				color: darkgreen;
+			}
+			.imgcontainer .image {
+				background-color: white;
+				width: 33.33%;
+				float: left;
+			}
+			.imgcontainer img {
+				background-color: white;
+				width: calc(100% - (20px * 2));
+				margin: 20px;
+			}
 		</style>
 		<nav class="navbar navbar-default">
 			<div class="container-fruid">
@@ -30,17 +43,17 @@
 							<a href="fire.html" class="dropdown-toggle" data-toggle="dropdown" role="button"
 								aria-haspopup="true" aria-expanded="false">화재<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="https://www.nfa.go.kr/nfa/news/firenews/disasterNews/">화재 기사</a></li>
+								<li><a href="https://www.nfa.go.kr/nfa/news/firenews/disasterNews/" target="_blank">화재 기사</a></li>
 								<li><a href="fireStatus.html">화재 현황</a></li>
 							</ul>
 						</li>
 					</ul>
-					<form class="navbar-form navbar-left">
+					<!-- <form class="navbar-form navbar-left">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="내용을 입력하세요.">
 						</div>
-						<button type="submit" class="btn btn-default">Search</button> <!--form태그에 입력한 내용이 서버로 전달-->
-					</form> <!--form태그는 어떠한 서버로 요청을 전달할 수 있게 해주는 태그다.-->
+						<button type="submit" class="btn btn-default">Search</button> <!-form태그에 입력한 내용이 서버로 전달->
+					</form> <!-form태그는 어떠한 서버로 요청을 전달할 수 있게 해주는 태그다.-> -->
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -53,27 +66,47 @@
 				</div>
 			</div>
 		</nav>
-		
+		<br>
+		<h2 class="statusTitle"><b>세부 화재 현황</b></h2>
+		<div class="imgcontainer">
+			<div class="image">
+				<img src="images/year.png"/>
+			</div>
+			<div class="image">
+				<img src="images/city.png"/>
+			</div>
+			<div class="image">
+				<img src="images/casualty.png"/>
+			</div>
+			<div class="image">
+				<img src="images/place.png"/>
+			</div>
+			<div class="image">
+				<img src="images/cause.png"/>
+			</div>
+			<div class="image">
+				<img src="images/carelessness.png"/>
+			</div>
+		</div>
 		<footer style="background-color: #000000; color: #ffffff">
 			<div class="container">
 				<br>
 				<div class="row"> <!--row는 기본적으로 12칸으로 나뉠 수 있게 되있다.-->
-					<div class="col-sm-2" style="text-align: center;"><h5>Copyright &copy; 2020</h5><h5>KwangWoon Park</div>
-					<div class="col-sm-4"><h4>대표자 소개</h4><p>한국항공대학교 소프트웨어학과</p></div>
+					<div class="col-sm-3" style="text-align: center;"><h5>Copyright &copy; 2020</h5><h5>KwangWoon Park</div>
+					<div class="col-sm-4"><h4>회사 소개</h4><p>한국항공대학교 소프트웨어학과</p></div>
 					<div class="col-sm-2"><h4 style="text-align: center;">Navigation</h4>
 						<div class="list-group">
 							<a href="index.html" class="list-group-item">Home</a>
 							<a href="camera.html" class="list-group-item">Cam video</a>
-							<a href="fireNews.html" class="list-group-item">화재 기사</a>
+							<a href="https://www.nfa.go.kr/nfa/news/firenews/disasterNews/" class="list-group-item">화재 기사</a>
 						</div>
 					</div>
 					<div class="col-sm-2"><h4 style="text-align: center;">SNS</h4>
 						<div class="list-group">
-							<a href="#" class="list-group-item">Facebook</a>
-							<a href="#" class="list-group-item">YouTube</a>
+							<a href="https://www.facebook.com/kwangwoon.park.12/" class="list-group-item">Facebook</a>
+							<a href="https://www.youtube.com/channel/UCAXCDlfNa4mirYpHTOFbwYA?view_as=subscriber" class="list-group-item">YouTube</a>
 						</div>
 					</div>
-					<div class="col-sm-2"><h4 style="=text-align: center;"><span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;by 박광운</h4></div>
 				</div>
 			</div>			
 		</footer>
