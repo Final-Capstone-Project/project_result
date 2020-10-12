@@ -17,6 +17,12 @@ public class BoardDAO_spring implements BoardDAO{
 	JdbcTemplate template;
 	
 	@Override
+	public List<BoardVO> getBoardList() {
+		String sql = "select * from board order by board_id desc";
+		return template.query(sql, new BoardRowMapper());
+	}
+	
+	@Override
 	public BoardVO getBoard(int board_id) {
 		String sql = "select * from board where board_id = ?";
 		return template.queryForObject(sql, new Object[] { board_id }, new BoardRowMapper());
