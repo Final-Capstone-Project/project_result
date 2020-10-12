@@ -23,6 +23,11 @@ public class BoardServiceImpl implements BoardService {
 		this.dao = dao;
 	}
 	
+	@Override 
+	public List<BoardVO> getBoardList() {
+		return dao.getBoardList();
+	}
+	
 	@Override
 	public BoardVO getBoard(int board_id) {
 		return dao.getBoard(board_id);
