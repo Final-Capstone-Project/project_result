@@ -1,5 +1,6 @@
 package biz.board.dao;
 
+import java.util.List;
 import biz.board.vo.BoardVO;
 
 public interface BoardDAO {
