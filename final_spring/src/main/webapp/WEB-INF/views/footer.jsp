@@ -22,13 +22,13 @@
 			<div class="container">
 				<br>
 				<div class="row"> <!--row는 기본적으로 12칸으로 나뉠 수 있게 되있다.-->
-					<div class="col-sm-3" style="text-align: center;"><h5>Copyright &copy; 2020</h5><h5>KwangWoon Park</h5></div>
-					<div class="col-sm-4"><h4>대표자 소개</h4><p>한국항공대학교 소프트웨어학과</p></div>
+					<div class="col-sm-3" style="text-align: center;"><h5>Copyright &copy; 2020</h5><h5>KwangWoon Park</div>
+					<div class="col-sm-4"><h4>회사 소개</h4><p>한국항공대학교 소프트웨어학과</p></div>
 					<div class="col-sm-2"><h4 style="text-align: center;">Navigation</h4>
 						<div class="list-group">
-							<a href="index.html" class="list-group-item">Home</a>
-							<a href="camera.html" class="list-group-item">Cam video</a>
-							<a href="fireNews.html" class="list-group-item">화재 기사</a>
+							<a href="index" class="list-group-item">Home</a>
+							<a href="camera" class="list-group-item">Cam video</a>
+							<a href="fireNews" class="list-group-item">화재 기사</a>
 						</div>
 					</div>
 					<div class="col-sm-2"><h4 style="text-align: center;">SNS</h4>
@@ -40,23 +40,7 @@
 				</div>
 			</div>			
 		</footer>
-		<div class="row">
-			<div class="modal" id="modal" tabindex="-1">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							Motion Detection Camera의 특징
-							<button class="close" data-dismiss="modal">&times;</button>
-						</div>
-						<div class="modal-body" style="text-align: center;">
-							저희 서비스의 특징은 바로 화재 및 침입 감지 시 영상과 알림을 제공합니다.<br><br>
-							<!--img src="#" id="imagepreview" style="width: 256px; height: 256px;"-->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<script src="js/bootstrap.js"></script>
-</body>
+	</body>
 </html>
