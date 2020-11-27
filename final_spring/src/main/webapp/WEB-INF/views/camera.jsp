@@ -93,10 +93,6 @@ blockquote:after {
 								</tr>
 							</tbody>
 						</table> -->
-				<div class="panel-footer">
-					<blockquote>Do not be vigilant</blockquote>
-					<!--인용구를 집어넣을 수 있다-->
-				</div>
 			</div>
 		</div>
 	</div>

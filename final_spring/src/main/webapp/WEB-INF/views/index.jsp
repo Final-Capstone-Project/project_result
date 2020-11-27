@@ -3,7 +3,8 @@
 	pageEncoding="UTF-8"%>
 <style type="text/css">
 .jumbotron {
-	background-image: url('C:\Users\qkrrh\eclipse-workspace\final_spring\src\main\webapp\images\jumbotronBackground.jpg');
+	background-image:
+		url('C:/Users/qkrrh/eclipse-workspace/final_spring/src/main/webapp/images/jumbotronBackground.jpg');
 	background-size: cover;
 	text-shadow: black 0.2em 0.2em 0.2em;
 	color: white;
@@ -87,7 +88,6 @@
 			</div>
 		</div>
 	</div>
-	<%@ include file="/WEB-INF/views/footer.jsp"%>
 	<div class="row">
 		<div class="modal" id="modal" tabindex="-1">
 			<div class="modal-dialog">
@@ -104,3 +104,4 @@
 			</div>
 		</div>
 	</div>
+	<%@ include file="/WEB-INF/views/footer.jsp"%>
