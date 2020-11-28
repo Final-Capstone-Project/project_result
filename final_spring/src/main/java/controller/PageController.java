@@ -36,5 +36,4 @@ public class PageController {
 	public void registerForm() {
 
 	}
-
 }

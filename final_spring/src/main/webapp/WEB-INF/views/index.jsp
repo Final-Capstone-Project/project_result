@@ -1,10 +1,20 @@
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<link rel="stylesheet" href="resources/static/css/bootstrap.css">
+<!--bootstrap.css를 이용해서 스타일을 꾸미겠다는-->
+<link rel="stylesheet" href="resources/static/css/MotionDetection.css">
+<script>
+	$("#myModal").click(function() {
+		$('#modal').modal();
+	});
+</script>
+
 <style type="text/css">
 .jumbotron {
-	background-image:
-		url('C:/Users/qkrrh/eclipse-workspace/final_spring/src/main/webapp/images/jumbotronBackground.jpg');
+	background-image: url('resources/static/images/jumbotronBackground.jpg');
 	background-size: cover;
 	text-shadow: black 0.2em 0.2em 0.2em;
 	color: white;
@@ -29,8 +39,8 @@
 			<h4>특징</h4>
 			<p>Motion Detection Camera의 특징.</p>
 			<p>
-				<a class="btn btn-default" data-target="#modal" data-toggle="modal">자세히
-					알아보기</a>
+				<button class="btn btn-default" id="myModal" data-target="#modal"
+					data-toggle="modal">자세히 알아보기</button>
 			</p>
 		</div>
 		<div class="col-md-4">
@@ -60,8 +70,7 @@
 			<div class="media">
 				<div class="media-left">
 					<a href="camera"><img class="media-object"
-						src="C:\Users\qkrrh\eclipse-workspace\final_spring\src\main\webapp\images\cam.jpg"
-						alt="cam 이미지"></a>
+						src="resources/static/images/cam.jpg" alt="cam 이미지"></a>
 					<!--alt는 웹사이트를 눈으로 보지 못하는 사람들을 위해 해당 이미지가 어떤 이미지인지 띄어주는 것-->
 				</div>
 				<div class="media-body">
@@ -75,8 +84,7 @@
 			<div class="media">
 				<div class="media-left">
 					<a href="fireNews"><img class="media-object"
-						src="C:\Users\qkrrh\eclipse-workspace\final_spring\src\main\webapp\images\fire.jpg"
-						alt="fire 이미지"></a>
+						src="resources/static/images/fire.jpg" alt="fire 이미지"></a>
 					<!--alt는 웹사이트를 눈으로 보지 못하는 사람들을 위해 해당 이미지가 어떤 이미지인지 띄어주는 것-->
 				</div>
 				<div class="media-body">
@@ -98,10 +106,10 @@
 					</div>
 					<div class="modal-body" style="text-align: center;">
 						저희 서비스의 특징은 바로 화재 및 침입 감지 시 영상과 알림을 제공합니다.<br> <br>
-						<!--img src="#" id="imagepreview" style="width: 256px; height: 256px;"-->
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<%@ include file="/WEB-INF/views/footer.jsp"%>
+</div>
+<%@ include file="/WEB-INF/views/footer.jsp"%>

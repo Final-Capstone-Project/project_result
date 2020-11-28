@@ -44,7 +44,7 @@ blockquote:after {
 					<div class="media">
 						<div class="media-left">
 							<a href="#"> <img class="media-object"
-								src="C:\Users\qkrrh\eclipse-workspace\final_spring\src\main\webapp\images\camera.jpg" alt="CAM 이미지">
+								src="resources/static/images/cam.jpg" alt="CAM 이미지">
 							</a>
 						</div>
 						<div class="media-body">

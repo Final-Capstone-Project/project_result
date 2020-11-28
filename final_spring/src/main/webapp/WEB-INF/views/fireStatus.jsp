@@ -38,17 +38,17 @@
 				class="btn btn-light dropdown-toggle">
 				<option value="">항목 선택</option>
 				<option value="year"
-					data-src="C:\Users\qkrrh\eclipse-workspace\final_spring\src\main\webapp\images\year.png">연도별</option>
+					data-src="resources/static/images/year.png">연도별</option>
 				<option value="city"
-					data-src="C:\Users\qkrrh\eclipse-workspace\final_spring\src\main\webapp\images\city.png">구별</option>
+					data-src="resources/static/images/city.png">구별</option>
 				<option value="casualty"
-					data-src="C:\Users\qkrrh\eclipse-workspace\final_spring\src\main\webapp\images\casualty.png">사상자별</option>
+					data-src="resources/static/images/casualty.png">사상자별</option>
 				<option value="place"
-					data-src="C:\Users\qkrrh\eclipse-workspace\final_spring\src\main\webapp\images\place.png">장소별</option>
+					data-src="resources/static/images/place.png">장소별</option>
 				<option value="cause"
-					data-src="C:\Users\qkrrh\eclipse-workspace\final_spring\src\main\webapp\images\cause.png">원인별</option>
+					data-src="resources/static/images/cause.png">원인별</option>
 				<option value="carelessness"
-					data-src="C:\Users\qkrrh\eclipse-workspace\final_spring\src\main\webapp\images\carelessness.png">부주의
+					data-src="resources/static/images/carelessness.png">부주의
 					유형별</option>
 			</select>
 			<div id="change_img" align="center"></div>
